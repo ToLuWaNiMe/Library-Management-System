@@ -12,7 +12,7 @@ This project is a Library Management System API built with Spring Boot.
 
 1.Clone the repository:
 
-git clone https://github.com/your-repo/library-management-system.git
+git clone https://github.com/ToLuWaNiMe/Library-Management-System
 
 2.Navigate to the project directory:
 
