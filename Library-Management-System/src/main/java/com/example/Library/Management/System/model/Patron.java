@@ -1,16 +1,22 @@
 package com.example.Library.Management.System.model;
 
-import jakarta.persistence.Entity;
+import jakarta.persistence.*;
 import lombok.Data;
-import org.springframework.data.annotation.Id;
+
 
 @Data
 @Entity
+@Table (name = "patrons")
+
 public class Patron {
     @Id
-   // @GeneratedValue(strategy = GenerationType.IDENTITY)
+   @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
+
+    @Column(nullable = false, length = 50)
     private String name;
+
+    @Column(length = 50)
     private String contactInfo;
 
     //Getters & Setters

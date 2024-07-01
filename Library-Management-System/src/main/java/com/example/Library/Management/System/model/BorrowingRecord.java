@@ -2,7 +2,6 @@ package com.example.Library.Management.System.model;
 
 import jakarta.persistence.*;
 import lombok.Data;
-import org.springframework.data.annotation.Id;
 
 import java.time.LocalDate;
 

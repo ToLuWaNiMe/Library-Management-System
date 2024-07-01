@@ -2,17 +2,18 @@ package com.example.Library.Management.System.aspect;
 
 import org.aspectj.lang.JoinPoint;
 import org.aspectj.lang.annotation.*;
+import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Component;
 
 import java.util.Arrays;
-import java.util.logging.Logger;
+
 
 @Aspect
 @Component
 public class LoggingAspect {
 
-    private Logger logger = (Logger) LoggerFactory.getLogger(this.getClass());
+    private Logger logger = LoggerFactory.getLogger(LoggingAspect.class);
 
     @Pointcut("execution(* com.example.library.*.*(..))")
     public void applicationPackagePointcut() {
@@ -31,7 +32,7 @@ public class LoggingAspect {
 
     @AfterThrowing(pointcut = "applicationPackagePointcut()", throwing = "exception")
     public void logAfterThrowing(JoinPoint joinPoint, Throwable exception) {
-        logger.warning("Exception in method: " + joinPoint.getSignature().getName() + " with cause: " + exception.getCause());
+        logger.error("Exception in method: " + joinPoint.getSignature().getName() + " with cause: " + exception.getCause());
     }
 }
 

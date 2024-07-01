@@ -1,23 +1,28 @@
 package com.example.Library.Management.System.model;
 
-
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import lombok.Data;
-import jakarta.persistence.Entity;
+import jakarta.persistence.*;
 import org.springframework.data.annotation.Id;
 
-@Data
+@Table( name = "books")
 @Entity
+
 public class Book {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
+
+
+    @Column(nullable = false, unique = true, length = 50)
     private String title;
+
+    @Column(nullable = false, length = 50)
     private String author;
 
+    @Temporal(TemporalType.DATE)
+    @Column(nullable = false)
     private int publicationYear;
 
+    @Column(nullable = false)
     private String isbn;
 
     //Getters & Setters
