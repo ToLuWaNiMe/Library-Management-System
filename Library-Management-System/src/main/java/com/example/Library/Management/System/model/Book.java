@@ -1,10 +1,12 @@
 package com.example.Library.Management.System.model;
 
 import jakarta.persistence.*;
-import org.springframework.data.annotation.Id;
+import lombok.Data;
+
 
 @Table( name = "books")
 @Entity
+@Data
 
 public class Book {
     @Id

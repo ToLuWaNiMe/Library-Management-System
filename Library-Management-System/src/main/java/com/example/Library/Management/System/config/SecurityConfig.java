@@ -33,8 +33,8 @@ public class SecurityConfig {
     public UserDetailsService userDetailsService(PasswordEncoder passwordEncoder) {
         return username -> User
                 .withUsername(username)
-                .password(passwordEncoder.encode("{password}"))  // Replace with actual password
-                .roles("LIBRARIAN")
+                .password(passwordEncoder.encode("password"))  // Replace with actual password
+                .roles("USER")
                 .build();
     }
 
